@@ -1,6 +1,6 @@
 /**
  * @file This method removes whitespace from the left end of a string.
- * @version 1.3.6
+ * @version 1.3.7
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -10,8 +10,8 @@
 'use strict';
 
 var toStr = require('to-string-x');
-// eslint-disable-next-line new-cap
-var reLeft = new require('cached-constructors-x').RegExp('^[' + require('white-space-x').string + ']+');
+var Rx = require('cached-constructors-x').RegExp;
+var reLeft = new Rx('^[' + require('white-space-x').string + ']+');
 var replace = ''.replace;
 
 /**

@@ -23,7 +23,7 @@
 ## trim-left-x
 This method removes whitespace from the left end of a string.
 
-**Version**: 1.3.6  
+**Version**: 1.3.7  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
