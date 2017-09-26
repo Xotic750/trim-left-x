@@ -1,6 +1,6 @@
 /**
  * @file This method removes whitespace from the left end of a string.
- * @version 1.3.7
+ * @version 2.0.0
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -9,7 +9,7 @@
 
 'use strict';
 
-var toStr = require('to-string-x');
+var requireCoercibleToString = require('require-coercible-to-string-x');
 var Rx = require('cached-constructors-x').RegExp;
 var reLeft = new Rx('^[' + require('white-space-x').string + ']+');
 var replace = ''.replace;
@@ -25,5 +25,5 @@ var replace = ''.replace;
  * trimLeft(' \t\na \t\n') === 'a \t\n'; // true
  */
 module.exports = function trimLeft(string) {
-  return replace.call(toStr(string), reLeft, '');
+  return replace.call(requireCoercibleToString(string), reLeft, '');
 };
