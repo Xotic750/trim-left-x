@@ -1,6 +1,6 @@
 /**
  * @file This method removes whitespace from the left end of a string.
- * @version 1.3.5
+ * @version 1.3.6
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -9,8 +9,10 @@
 
 'use strict';
 
-var $toString = require('to-string-x');
-var reLeft = new RegExp('^[' + require('white-space-x').string + ']+');
+var toStr = require('to-string-x');
+// eslint-disable-next-line new-cap
+var reLeft = new require('cached-constructors-x').RegExp('^[' + require('white-space-x').string + ']+');
+var replace = ''.replace;
 
 /**
  * This method removes whitespace from the left end of a string.
@@ -23,5 +25,5 @@ var reLeft = new RegExp('^[' + require('white-space-x').string + ']+');
  * trimLeft(' \t\na \t\n') === 'a \t\n'; // true
  */
 module.exports = function trimLeft(string) {
-  return $toString(string).replace(reLeft, '');
+  return replace.call(toStr(string), reLeft, '');
 };
