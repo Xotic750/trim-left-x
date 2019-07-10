@@ -1,13 +1,13 @@
 /*!
 {
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-10T22:30:45.172Z",
+  "date": "2019-07-10T22:36:42.380Z",
   "describe": "",
   "description": "This method removes whitespace from the left end of a string.",
   "file": "trim-left-x.js",
   "hash": "090346a1bb63768ff2cf",
   "license": "MIT",
-  "version": "4.0.0"
+  "version": "4.0.1"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {

@@ -21,27 +21,16 @@
 <a name="module_trim-left-x"></a>
 
 ## trim-left-x
+
 This method removes whitespace from the left end of a string.
 
-**Version**: 3.0.0  
-**Author**: Xotic750 <Xotic750@gmail.com>  
-**License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
-**Copyright**: Xotic750  
+- [trim-left-x](#module_trim-left-x)
+  - [`.trimLeft2016`](#module_trim-left-x.trimLeft2016) ⇒ <code>string</code>
 
-* [trim-left-x](#module_trim-left-x)
-    * [`.trimLeft`](#module_trim-left-x.trimLeft)
-    * [`.trimLeft2016`](#module_trim-left-x.trimLeft2016) ⇒ <code>string</code>
-    * [`.trimLeft2018`](#module_trim-left-x.trimLeft2018) ⇒ <code>string</code>
-
-<a name="module_trim-left-x.trimLeft"></a>
-
-### `trim-left-x.trimLeft`
-A reference to leftTrim2018.
-
-**Kind**: static property of [<code>trim-left-x</code>](#module_trim-left-x)  
 <a name="module_trim-left-x.trimLeft2016"></a>
 
 ### `trim-left-x.trimLeft2016` ⇒ <code>string</code>
+
 This method removes whitespace from the left end of a string. (ES2016)
 
 **Kind**: static property of [<code>trim-left-x</code>](#module_trim-left-x)  
@@ -50,20 +39,22 @@ This method removes whitespace from the left end of a string. (ES2016)
 
 - <code>TypeError</code> If string is null or undefined or not coercible.
 
-
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                                      |
+| ------ | ------------------- | ------------------------------------------------ |
 | string | <code>string</code> | The string to trim the left end whitespace from. |
 
-**Example**  
+**Example**
+
 ```js
-var trimLeft = require('trim-left-x').trimLeft2016;
+import {trimLeft2016} from 'trim-left-x';
 
-trimLeft(' \t\na \t\n') === 'a \t\n'; // true
+console.log(trimLeft2016(' \t\na \t\n') === 'a \t\n'); // true
 ```
-<a name="module_trim-left-x.trimLeft2018"></a>
 
-### `trim-left-x.trimLeft2018` ⇒ <code>string</code>
+<a name="module_trim-left-x"></a>
+
+### `trim-left-x` ⇒ <code>string</code>
+
 This method removes whitespace from the left end of a string. (ES2018)
 
 **Kind**: static property of [<code>trim-left-x</code>](#module_trim-left-x)  
@@ -72,14 +63,14 @@ This method removes whitespace from the left end of a string. (ES2018)
 
 - <code>TypeError</code> If string is null or undefined or not coercible.
 
-
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                                      |
+| ------ | ------------------- | ------------------------------------------------ |
 | string | <code>string</code> | The string to trim the left end whitespace from. |
 
-**Example**  
-```js
-var trimLeft = require('trim-left-x').trimLeft2018;
+**Example**
 
-trimLeft(' \t\na \t\n') === 'a \t\n'; // true
+```js
+import trimLeft from 'trim-left-x');
+
+console.log(trimLeft(' \t\na \t\n') === 'a \t\n'); // true
 ```
