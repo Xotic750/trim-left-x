@@ -1,12 +1,10 @@
 import requireCoercibleToString from 'require-coercible-to-string-x';
-import whiteSpace, {string2016} from 'white-space-x';
-
-const EMPTY_STRING = '';
-const RegExpCtr = /none/.constructor;
-const reLeft2016 = new RegExpCtr(`^[${string2016}]+`);
-const reLeft = new RegExpCtr(`^[${whiteSpace}]+`);
-const {replace} = EMPTY_STRING;
-
+import whiteSpace, { string2016 } from 'white-space-x';
+var EMPTY_STRING = '';
+var RegExpCtr = /none/.constructor;
+var reLeft2016 = new RegExpCtr("^[".concat(string2016, "]+"));
+var reLeft = new RegExpCtr("^[".concat(whiteSpace, "]+"));
+var replace = EMPTY_STRING.replace;
 /**
  * This method removes whitespace from the left end of a string. (ES2016).
  *
@@ -14,10 +12,10 @@ const {replace} = EMPTY_STRING;
  * @throws {TypeError} If string is null or undefined or not coercible.
  * @returns {string} The left trimmed string.
  */
+
 export function trimLeft2016(string) {
   return replace.call(requireCoercibleToString(string), reLeft2016, EMPTY_STRING);
 }
-
 /**
  * This method removes whitespace from the left end of a string. (ES2018).
  *
@@ -25,6 +23,9 @@ export function trimLeft2016(string) {
  * @throws {TypeError} If string is null or undefined or not coercible.
  * @returns {string} The left trimmed string.
  */
+
 export default function trimLeft2018(string) {
   return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
 }
+
+//# sourceMappingURL=trim-left-x.esm.js.map
