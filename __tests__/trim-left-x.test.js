@@ -1,7 +1,6 @@
 import noop from 'lodash/noop';
 import trimLeft, {trimLeft2016} from 'src/trim-left-x';
 
-/* eslint-disable-next-line compat/compat */
 const hasSymbol = typeof Symbol === 'function' && typeof Symbol('') === 'symbol';
 const ifSymbolIt = hasSymbol ? it : xit;
 
@@ -37,7 +36,6 @@ describe('trimLeft', function() {
       }).toThrowErrorMatchingSnapshot();
 
       expect(function() {
-        /* eslint-disable-next-line no-void */
         trimLeft2016(void 0);
       }).toThrowErrorMatchingSnapshot();
 
@@ -75,7 +73,7 @@ describe('trimLeft', function() {
 
     ifSymbolIt('should throw for Symbol', function() {
       expect.assertions(2);
-      /* eslint-disable-next-line compat/compat */
+
       const sym = Symbol('foo');
       expect(function() {
         trimLeft2016(sym);
@@ -96,7 +94,6 @@ describe('trimLeft', function() {
       }).toThrowErrorMatchingSnapshot();
 
       expect(function() {
-        /* eslint-disable-next-line no-void */
         trimLeft(void 0);
       }).toThrowErrorMatchingSnapshot();
 
@@ -134,7 +131,7 @@ describe('trimLeft', function() {
 
     ifSymbolIt('should throw for Symbol', function() {
       expect.assertions(2);
-      /* eslint-disable-next-line compat/compat */
+
       const sym = Symbol('foo');
       expect(function() {
         trimLeft(sym);
