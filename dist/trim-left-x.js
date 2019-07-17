@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-17T13:08:54.184Z",
+  "date": "2019-07-17T15:18:46.173Z",
   "describe": "",
   "description": "This method removes whitespace from the left end of a string.",
   "file": "trim-left-x.js",
-  "hash": "ed39460e4c9570578d79",
+  "hash": "ad50f7cb71db075b69ec",
   "license": "MIT",
-  "version": "4.0.9"
+  "version": "4.0.10"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -275,10 +275,12 @@ __webpack_require__.r(__webpack_exports__);
  * @param {*} [value] - The value to check.
  * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
  */
-function isNil(value) {
+var isNil = function isNil(value) {
   /* eslint-disable-next-line lodash/prefer-is-nil */
   return value === null || typeof value === 'undefined';
-}
+};
+
+/* harmony default export */ var is_nil_x_esm = (isNil);
 
 
 // CONCATENATED MODULE: ./node_modules/require-object-coercible-x/dist/require-object-coercible-x.esm.js
@@ -292,13 +294,15 @@ function isNil(value) {
  * @returns {string} The `value`.
  */
 
-function requireObjectCoercible(value) {
-  if (isNil(value)) {
+var require_object_coercible_x_esm_requireObjectCoercible = function requireObjectCoercible(value) {
+  if (is_nil_x_esm(value)) {
     throw new TypeError("Cannot call method on ".concat(value));
   }
 
   return value;
-}
+};
+
+/* harmony default export */ var require_object_coercible_x_esm = (require_object_coercible_x_esm_requireObjectCoercible);
 
 
 // EXTERNAL MODULE: ./node_modules/is-symbol/index.js
@@ -317,13 +321,15 @@ var castString = ERROR_MESSAGE.constructor;
  * @returns {string} The converted value.
  */
 
-function ToString(value) {
+var to_string_x_esm_ToString = function ToString(value) {
   if (is_symbol_default()(value)) {
     throw new TypeError(ERROR_MESSAGE);
   }
 
   return castString(value);
-}
+};
+
+/* harmony default export */ var to_string_x_esm = (to_string_x_esm_ToString);
 
 
 // CONCATENATED MODULE: ./node_modules/require-coercible-to-string-x/dist/require-coercible-to-string-x.esm.js
@@ -337,9 +343,11 @@ function ToString(value) {
  * @returns {string} The value as a string.
  */
 
-function requireCoercibleToString(value) {
-  return ToString(requireObjectCoercible(value));
-}
+var require_coercible_to_string_x_esm_requireCoercibleToString = function requireCoercibleToString(value) {
+  return to_string_x_esm(require_object_coercible_x_esm(value));
+};
+
+/* harmony default export */ var require_coercible_to_string_x_esm = (require_coercible_to_string_x_esm_requireCoercibleToString);
 
 
 // CONCATENATED MODULE: ./node_modules/white-space-x/dist/white-space-x.esm.js
@@ -673,7 +681,7 @@ var replace = EMPTY_STRING.replace;
  */
 
 function trimLeft2016(string) {
-  return replace.call(requireCoercibleToString(string), reLeft2016, EMPTY_STRING);
+  return replace.call(require_coercible_to_string_x_esm(string), reLeft2016, EMPTY_STRING);
 }
 /**
  * This method removes whitespace from the left end of a string. (ES2018).
@@ -684,7 +692,7 @@ function trimLeft2016(string) {
  */
 
 var trim_left_x_esm_trimLeft2018 = function trimLeft2018(string) {
-  return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
+  return replace.call(require_coercible_to_string_x_esm(string), reLeft, EMPTY_STRING);
 };
 
 /* harmony default export */ var trim_left_x_esm = __webpack_exports__["default"] = (trim_left_x_esm_trimLeft2018);
