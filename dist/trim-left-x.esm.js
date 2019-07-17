@@ -24,8 +24,10 @@ export function trimLeft2016(string) {
  * @returns {string} The left trimmed string.
  */
 
-export default function trimLeft2018(string) {
+var trimLeft2018 = function trimLeft2018(string) {
   return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
-}
+};
+
+export default trimLeft2018;
 
 //# sourceMappingURL=trim-left-x.esm.js.map

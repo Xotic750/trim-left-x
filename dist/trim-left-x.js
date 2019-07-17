@@ -2,11 +2,11 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-16T21:05:45.026Z",
+  "date": "2019-07-17T13:08:54.184Z",
   "describe": "",
   "description": "This method removes whitespace from the left end of a string.",
   "file": "trim-left-x.js",
-  "hash": "5ddc0e410c5124ffbefd",
+  "hash": "ed39460e4c9570578d79",
   "license": "MIT",
   "version": "4.0.9"
 }
@@ -657,7 +657,6 @@ var string2016 = stringES2016;
 
 // CONCATENATED MODULE: ./dist/trim-left-x.esm.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trimLeft2016", function() { return trimLeft2016; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trimLeft2018; });
 
 
 var EMPTY_STRING = '';
@@ -684,9 +683,11 @@ function trimLeft2016(string) {
  * @returns {string} The left trimmed string.
  */
 
-function trimLeft2018(string) {
+var trim_left_x_esm_trimLeft2018 = function trimLeft2018(string) {
   return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
-}
+};
+
+/* harmony default export */ var trim_left_x_esm = __webpack_exports__["default"] = (trim_left_x_esm_trimLeft2018);
 
 
 
