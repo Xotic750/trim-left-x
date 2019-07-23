@@ -20,42 +20,19 @@
 </a>
 <a name="module_trim-left-x"></a>
 
-## trim-left-x
+## trim-left-x (a.k.a trimStart in ES2019)
 
-This method removes whitespace from the left end of a string.
+This method removes whitespace from the start of a string.
 
-- [trim-left-x](#module_trim-left-x)
-  - [`.trimLeft2016`](#module_trim-left-x.trimLeft2016) ⇒ <code>string</code>
+<a name="exp_module_math-trim-left-x--module.exports"></a>
 
-<a name="module_trim-left-x.trimLeft2016"></a>
-
-### `trim-left-x.trimLeft2016` ⇒ <code>string</code>
-
-This method removes whitespace from the left end of a string. (ES2016)
-
-**Kind**: static property of [<code>trim-left-x</code>](#module_trim-left-x)  
-**Returns**: <code>string</code> - The left trimmed string.  
-**Throws**:
-
-- <code>TypeError</code> If string is null or undefined or not coercible.
-
-| Param  | Type                | Description                                      |
-| ------ | ------------------- | ------------------------------------------------ |
-| string | <code>string</code> | The string to trim the left end whitespace from. |
-
-**Example**
-
-```js
-import {trimLeft2016} from 'trim-left-x';
-
-console.log(trimLeft2016(' \t\na \t\n') === 'a \t\n'); // true
-```
+### `module.exports(string)` ⇒ <code>number</code> ⏏
 
 <a name="module_trim-left-x"></a>
 
 ### `trim-left-x` ⇒ <code>string</code>
 
-This method removes whitespace from the left end of a string. (ES2018)
+This method removes whitespace from the left end of a string. (ES2019)
 
 **Kind**: static property of [<code>trim-left-x</code>](#module_trim-left-x)  
 **Returns**: <code>string</code> - The left trimmed string.  
@@ -70,7 +47,7 @@ This method removes whitespace from the left end of a string. (ES2018)
 **Example**
 
 ```js
-import trimLeft from 'trim-left-x');
+import trimStart from 'trim-left-x';
 
-console.log(trimLeft(' \t\na \t\n') === 'a \t\n'); // true
+console.log(trimStart(' \t\na \t\n') === 'a \t\n'); // true
 ```

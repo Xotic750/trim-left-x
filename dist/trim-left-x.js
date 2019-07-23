@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-22T12:16:26.478Z",
+  "date": "2019-07-23T23:44:45.624Z",
   "describe": "",
   "description": "This method removes whitespace from the left end of a string.",
   "file": "trim-left-x.js",
-  "hash": "ad50f7cb71db075b69ec",
+  "hash": "2118989b4cdcea226cec",
   "license": "MIT",
-  "version": "4.0.20"
+  "version": "4.0.21"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -664,38 +664,25 @@ var string2016 = stringES2016;
 
 
 // CONCATENATED MODULE: ./dist/trim-left-x.esm.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trimLeft2016", function() { return trimLeft2016; });
 
 
 var EMPTY_STRING = '';
 var RegExpCtr = /none/.constructor;
-var reLeft2016 = new RegExpCtr("^[".concat(string2016, "]+"));
 var reLeft = new RegExpCtr("^[".concat(white_space_x_esm, "]+"));
 var replace = EMPTY_STRING.replace;
 /**
- * This method removes whitespace from the left end of a string. (ES2016).
+ * This method removes whitespace from the start of a string. (ES2019).
  *
  * @param {string} [string] - The string to trim the left end whitespace from.
  * @throws {TypeError} If string is null or undefined or not coercible.
  * @returns {string} The left trimmed string.
  */
 
-function trimLeft2016(string) {
-  return replace.call(require_coercible_to_string_x_esm(string), reLeft2016, EMPTY_STRING);
-}
-/**
- * This method removes whitespace from the left end of a string. (ES2018).
- *
- * @param {string} [string] - The string to trim the left end whitespace from.
- * @throws {TypeError} If string is null or undefined or not coercible.
- * @returns {string} The left trimmed string.
- */
-
-var trim_left_x_esm_trimLeft2018 = function trimLeft2018(string) {
+var trim_left_x_esm_trimStart = function trimStart(string) {
   return replace.call(require_coercible_to_string_x_esm(string), reLeft, EMPTY_STRING);
 };
 
-/* harmony default export */ var trim_left_x_esm = __webpack_exports__["default"] = (trim_left_x_esm_trimLeft2018);
+/* harmony default export */ var trim_left_x_esm = __webpack_exports__["default"] = (trim_left_x_esm_trimStart);
 
 
 
