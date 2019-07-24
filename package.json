@@ -1,6 +1,6 @@
 {
   "name": "trim-left-x",
-  "version": "4.0.21",
+  "version": "4.0.22",
   "description": "This method removes whitespace from the left end of a string.",
   "homepage": "https://github.com/Xotic750/trim-left-x",
   "author": {
@@ -23,6 +23,7 @@
   ],
   "module": "dist/trim-left-x.esm.js",
   "main": "dist/trim-left-x.js",
+  "jsdelivr": "dist/trim-left-x.min.js",
   "scripts": {
     "build:esm": "mkdirp dist && babel -s true --env-name esm src/trim-left-x.js -o dist/trim-left-x.esm.js",
     "build:base": "webpack --bail --progress --profile --colors",
@@ -50,8 +51,8 @@
     "url": "https://github.com/Xotic750/trim-left-x/issues"
   },
   "dependencies": {
-    "require-coercible-to-string-x": "^2.0.19",
-    "white-space-x": "^4.0.17"
+    "require-coercible-to-string-x": "^2.0.20",
+    "white-space-x": "^4.0.18"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
