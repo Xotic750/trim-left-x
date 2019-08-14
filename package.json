@@ -1,6 +1,6 @@
 {
   "name": "trim-left-x",
-  "version": "4.0.28",
+  "version": "4.1.0",
   "description": "This method removes whitespace from the left end of a string.",
   "homepage": "https://github.com/Xotic750/trim-left-x",
   "author": {
@@ -52,8 +52,8 @@
     "url": "https://github.com/Xotic750/trim-left-x/issues"
   },
   "dependencies": {
-    "require-coercible-to-string-x": "^2.0.26",
-    "white-space-x": "^4.0.24"
+    "require-coercible-to-string-x": "^2.1.0",
+    "white-space-x": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
