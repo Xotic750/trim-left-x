@@ -1,10 +1,12 @@
 import requireCoercibleToString from 'require-coercible-to-string-x';
 import whiteSpace from 'white-space-x';
+import methodize from 'simple-methodize-x';
 
 const EMPTY_STRING = '';
 const RegExpCtr = /none/.constructor;
 const reLeft = new RegExpCtr(`^[${whiteSpace}]+`);
-const {replace} = EMPTY_STRING;
+const methodizedReplace = methodize(EMPTY_STRING.replace);
+
 /**
  * This method removes whitespace from the start of a string. (ES2019).
  *
@@ -13,7 +15,7 @@ const {replace} = EMPTY_STRING;
  * @returns {string} The left trimmed string.
  */
 const trimStart = function trimStart(string) {
-  return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
+  return methodizedReplace(requireCoercibleToString(string), reLeft, EMPTY_STRING);
 };
 
 export default trimStart;

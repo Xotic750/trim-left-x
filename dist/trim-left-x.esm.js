@@ -1,9 +1,10 @@
 import requireCoercibleToString from 'require-coercible-to-string-x';
 import whiteSpace from 'white-space-x';
+import methodize from 'simple-methodize-x';
 var EMPTY_STRING = '';
 var RegExpCtr = /none/.constructor;
 var reLeft = new RegExpCtr("^[".concat(whiteSpace, "]+"));
-var replace = EMPTY_STRING.replace;
+var methodizedReplace = methodize(EMPTY_STRING.replace);
 /**
  * This method removes whitespace from the start of a string. (ES2019).
  *
@@ -13,7 +14,7 @@ var replace = EMPTY_STRING.replace;
  */
 
 var trimStart = function trimStart(string) {
-  return replace.call(requireCoercibleToString(string), reLeft, EMPTY_STRING);
+  return methodizedReplace(requireCoercibleToString(string), reLeft, EMPTY_STRING);
 };
 
 export default trimStart;
