@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-20T12:53:25.878Z",
+  "date": "2019-08-20T19:07:49.611Z",
   "describe": "",
   "description": "This method removes whitespace from the left end of a string.",
   "file": "trim-left-x.js",
-  "hash": "f8cd16d82fb134c94ecf",
+  "hash": "f7eb0f0f0bcaaf30defd",
   "license": "MIT",
-  "version": "4.1.0"
+  "version": "4.1.1"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -739,16 +739,114 @@ var isPrimitive = function isPrimitive(val) {
 var is_string = __webpack_require__(1);
 var is_string_default = /*#__PURE__*/__webpack_require__.n(is_string);
 
+// CONCATENATED MODULE: ./node_modules/has-boxed-string-x/dist/has-boxed-string-x.esm.js
+var has_boxed_string_x_esm_string = 'a';
+var boxedString = {}.constructor(has_boxed_string_x_esm_string);
+/**
+ * Check failure of by-index access of string characters (IE < 9)
+ * and failure of `0 in boxedString` (Rhino).
+ *
+ * `true` if no failure; otherwise `false`.
+ *
+ * @type boolean
+ */
+
+var hasBoxed = boxedString[0] === has_boxed_string_x_esm_string && 0 in boxedString;
+/* harmony default export */ var has_boxed_string_x_esm = (hasBoxed);
+
+
+// CONCATENATED MODULE: ./node_modules/noop-x/dist/noop-x.esm.js
+/**
+ * This method returns undefined.
+ *
+ * @returns {undefined} Always undefined.
+ */
+var noop = function noop() {};
+/* eslint-disable-line lodash/prefer-noop */
+
+
+/* harmony default export */ var noop_x_esm = (noop);
+
+
+// CONCATENATED MODULE: ./node_modules/has-working-bind-x/dist/has-working-bind-x.esm.js
+
+var has_working_bind_x_esm_bind = noop_x_esm.bind;
+
+var test1 = function test1() {
+  var a1 = null;
+  var a2 = null;
+  var context = null;
+  var testThis = [];
+
+  var test1Fn = function test1Fn(arg1, arg2) {
+    /* eslint-disable-next-line babel/no-invalid-this */
+    context = this;
+    a1 = arg1;
+    a2 = arg2;
+    /* eslint-disable-next-line prefer-rest-params */
+
+    return arguments;
+  };
+
+  try {
+    var boundFn = has_working_bind_x_esm_bind.apply(test1Fn, [testThis, 1]);
+    var args = boundFn(2);
+    return boundFn.length === 1 && args.length === 2 && a1 === 1 && a2 === 2 && context === testThis;
+  } catch (e) {
+    return false;
+  }
+};
+
+var test2 = function test2() {
+  var a1 = null;
+  var a2 = null;
+  var context = null;
+  var oracle = [1, 2, 3];
+
+  var Ctr = function Ctr(arg1, arg2) {
+    a1 = arg1;
+    a2 = arg2;
+    context = this;
+    return oracle;
+  };
+
+  try {
+    var BoundFn = has_working_bind_x_esm_bind.apply(Ctr, [null]);
+    var returned = new BoundFn(1, 2);
+    return BoundFn.length === Ctr.length && returned === oracle && a1 === 1 && a2 === 2 && context !== oracle;
+  } catch (e) {
+    return false;
+  }
+};
+/**
+ * Indicates if the engine has a working bind function.
+ *
+ * @type {boolean}
+ */
+
+
+var isWorking = typeof has_working_bind_x_esm_bind === 'function' && test1() && test2();
+/* harmony default export */ var has_working_bind_x_esm = (isWorking);
+
+
 // CONCATENATED MODULE: ./node_modules/util-pusher-x/dist/util-pusher-x.esm.js
+
+
 
 
 var EMPTY_STRING = '';
 var split = EMPTY_STRING.split;
-var splitter = [EMPTY_STRING];
-
+var max = Math.max;
+var util_pusher_x_esm_bind = is_primitive_x_esm.bind,
+    util_pusher_x_esm_call = is_primitive_x_esm.call;
+var stringSplit = function stringSplit(string, pattern) {
+  // noinspection JSUnresolvedFunction
+  return split.call(string, pattern);
+};
+var $split = has_working_bind_x_esm ? util_pusher_x_esm_bind.call(util_pusher_x_esm_call, split) : stringSplit;
 var util_pusher_x_esm_getIterable = function getIterable(arrayLike) {
   // noinspection JSUnresolvedFunction
-  return is_string_default()(arrayLike) ? split.apply(arrayLike, splitter) : arrayLike;
+  return is_string_default()(arrayLike) ? $split(arrayLike, EMPTY_STRING) : arrayLike;
 }; // eslint-disable jsdoc/no-undefined-types
 // noinspection JSCommentMatchesSignature
 
@@ -762,7 +860,6 @@ var util_pusher_x_esm_getIterable = function getIterable(arrayLike) {
  */
 // eslint-enable jsdoc/no-undefined-types
 
-
 var util_pusher_x_esm_pusher = function pusher(arrayLike, from) {
   /* eslint-disable-next-line prefer-rest-params */
   var target = arguments.length > 2 ? arguments[2] : [];
@@ -771,10 +868,10 @@ var util_pusher_x_esm_pusher = function pusher(arrayLike, from) {
     return target;
   }
 
-  var iterable = util_pusher_x_esm_getIterable(arrayLike);
+  var iterable = has_boxed_string_x_esm ? arrayLike : util_pusher_x_esm_getIterable(arrayLike);
   var length = iterable.length;
 
-  for (var i = from || 0; i < length; i += 1) {
+  for (var i = max(0, from) || 0; i < length; i += 1) {
     target[target.length] = arrayLike[i];
   }
 
@@ -794,6 +891,9 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+
+var nativeBind = util_pusher_x_esm.bind,
+    simple_bind_x_esm_call = util_pusher_x_esm.call;
 var simple_bind_x_esm_ERROR_MESSAGE = 'bind called on incompatible ';
 var object = {};
 var ObjectCtr = object.constructor;
@@ -893,27 +993,9 @@ var getResult = function getResult(target, boundArgs) {
   /* eslint-disable-next-line babel/no-invalid-this,babel/new-cap */
 
   return ObjectCtr(result) === result ? result : this;
-}; // eslint-disable jsdoc/check-param-names
-// noinspection JSCommentMatchesSignature
+};
 
-/**
- * The bind() method creates a new function that, when called, has its this
- * keyword set to the provided value, with a given sequence of arguments
- * preceding any provided when the new function is called.
- *
- * @param {Function} target - The target function.
- * @param {*} [thisArg] - The value to be passed as the this parameter to the target
- *  function when the bound function is called. The value is ignored if the
- *  bound function is constructed using the new operator.
- * @param {...*} [args] - Arguments to prepend to arguments provided to the bound
- *  function when invoking the target function.
- * @throws {TypeError} If target is not a function.
- * @returns {Function} The bound function.
- */
-// eslint-enable jsdoc/check-param-names
-
-
-var simple_bind_x_esm_bind = function bind(target, thisArg) {
+var implementation = function bind(target, thisArg) {
   simple_bind_x_esm_assertIsFunction(target);
   /* eslint-disable-next-line prefer-rest-params */
 
@@ -931,8 +1013,24 @@ var simple_bind_x_esm_bind = function bind(target, thisArg) {
   bound = getBoundFn([binder, target, bindArgs]);
   return bound;
 };
+/**
+ * The bind() method creates a new function that, when called, has its this
+ * keyword set to the provided value, with a given sequence of arguments
+ * preceding any provided when the new function is called.
+ *
+ * @function bind
+ * @param {Function} target - The target function.
+ * @param {*} [thisArg] - The value to be passed as the this parameter to the target
+ *  function when the bound function is called. The value is ignored if the
+ *  bound function is constructed using the new operator.
+ * @param {...*} [args] - Arguments to prepend to arguments provided to the bound
+ *  function when invoking the target function.
+ * @throws {TypeError} If target is not a function.
+ * @returns {Function} The bound function.
+ */
 
-/* harmony default export */ var simple_bind_x_esm = (simple_bind_x_esm_bind);
+var $bind = has_working_bind_x_esm ? simple_bind_x_esm_call.bind(nativeBind) : implementation;
+/* harmony default export */ var simple_bind_x_esm = ($bind);
 
 
 // CONCATENATED MODULE: ./node_modules/simple-call-x/dist/simple-call-x.esm.js
